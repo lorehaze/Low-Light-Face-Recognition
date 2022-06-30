@@ -18,8 +18,6 @@ from skimage import io
 matplotlib.rcParams['font.size'] = 8
 
 # function that plots image and histogram
-
-
 def plot_img_and_hist(image, axes, bins=256):
     """Plot an image along with its histogram and cumulative histogram.
 
