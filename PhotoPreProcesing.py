@@ -6,9 +6,9 @@ from matplotlib import image
 
 # folder -> photo directory
 # photo_toCheck -> photo name to check for brightness
-folder = "photos/"
-photo_name = "Black.png"
-photo_toCheck = str(folder + photo_name)
+# folder = "photos/"
+# photo_name = "Yellow.png"
+# photo_toCheck = str(folder + photo_name)
 
 # set default standard black brightness
 # reference https://a.atmos.washington.edu/~ovens/javascript/colorpicker.html
@@ -50,6 +50,6 @@ def photoBrightnessEvaluate(path_to_photo_toCheck):
 
 
 # Example
-tmpBright = brightnessCalculator(photo_toCheck)
-print(tmpBright)
-print(photoBrightnessEvaluate(photo_toCheck))
+# tmpBright = brightnessCalculator(photo_toCheck)
+# print(tmpBright)
+# print(photoBrightnessEvaluate(photo_toCheck))
