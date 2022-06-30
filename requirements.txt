@@ -1,0 +1,9 @@
+imageio==2.19.3
+keras==2.9.0
+matplotlib==3.5.2
+numpy==1.23.0
+oauthlib==3.2.0
+opencv-python==4.6.0.66
+scikit-image==0.19.3
+scipy==1.8.1
+tensorflow-macos==2.9.2
