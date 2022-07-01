@@ -14,7 +14,7 @@ from skimage import io
 
 # path to get photo from
 folder = "photos/"
-photo_name = "grey_stretched.jpg"
+photo_name = "dark_chri.png"
 photo_toCheck = str(folder + photo_name)
 
 # path to save post-elaboration output
@@ -23,13 +23,15 @@ output_path = str(output_folder)
 
 processingFlag = photoBrightnessEvaluate(photo_toCheck)
 
-
 if processingFlag == True:
+    print("Equalization started.")
     img = io.imread(photo_toCheck)
     # Contrast stretching
-    p2, p98 = np.percentile(img, (2, 98))
-    img_rescale = exposure.rescale_intensity(img, in_range=(p2, p98))
+    # p2, p98 = np.percentile(img, (2, 98))
+    # img_rescale = exposure.rescale_intensity(img, in_range=(p2, p98))
+    # Adaptive Equalization
+    img_adapteq = exposure.equalize_adapthist(img, clip_limit=0.03)
     io.imsave(
-        output_folder + "contrast_stretched.jpg",
-        img_rescale,
+        output_folder + photo_name,
+        img_adapteq,
     )

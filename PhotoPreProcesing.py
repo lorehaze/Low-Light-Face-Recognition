@@ -13,9 +13,9 @@ from matplotlib import image
 # set default standard black brightness
 # reference https://a.atmos.washington.edu/~ovens/javascript/colorpicker.html
 # insert default RGB values for a standard darked photo
-std_R = 38
-std_G = 38
-std_B = 38
+std_R = 64
+std_G = 64
+std_B = 64
 stdRGBMean = (
     std_B + std_G + std_R
 ) / 3  # calculate standard mean value from parameters
