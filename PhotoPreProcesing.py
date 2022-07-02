@@ -1,4 +1,3 @@
-from concurrent.futures import process
 from re import I, X
 from PIL import Image
 from math import sqrt
