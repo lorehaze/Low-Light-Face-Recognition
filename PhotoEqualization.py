@@ -14,7 +14,7 @@ from skimage import io
 
 # path to get photo from
 folder = "photos/"
-photo_name = "dark_chri.png"
+photo_name = ".png"
 photo_toCheck = str(folder + photo_name)
 
 # path to save post-elaboration output

@@ -36,11 +36,6 @@ def brightnessCalculator(path_to_photo_toCheck):
     return brightness
 
 
-def stdComparison(value_to_compare):
-    if value_to_compare < stdRGBMean:
-        return True
-
-
 def photoBrightnessEvaluate(path_to_photo_toCheck):
     tmpPhotoBrightness = brightnessCalculator(
         path_to_photo_toCheck
