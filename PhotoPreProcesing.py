@@ -2,7 +2,17 @@ from concurrent.futures import process
 from re import I, X
 from PIL import Image
 from math import sqrt
+import io
+from skimage import exposure
+from skimage import io
+from skimage import data, img_as_float
+import numpy as np
 from matplotlib import image
+import matplotlib.pyplot as plt
+import matplotlib
+import skimage.io
+import keras.preprocessing.image
+import cv2
 
 # folder -> photo directory
 # photo_toCheck -> photo name to check for brightness
@@ -19,6 +29,15 @@ std_B = 64
 stdRGBMean = (
     std_B + std_G + std_R
 ) / 3  # calculate standard mean value from parameters
+
+# path to get photo from
+folder = "photos/"
+photo_name = "darked_face.jpeg"
+photo_toCheck = str(folder + photo_name)
+
+# path to save post-elaboration output
+output_folder = "equalized/"
+output_path = str(output_folder)
 
 
 def brightnessCalculator(path_to_photo_toCheck):
@@ -44,7 +63,21 @@ def photoBrightnessEvaluate(path_to_photo_toCheck):
         return True
 
 
+def photoProcessor(boolean_value):
+    if processingFlag == True:
+        print("Equalization started.")
+        img = io.imread(photo_toCheck)
+        # Contrast stretching
+        # p2, p98 = np.percentile(img, (2, 98))
+        # img_rescale = exposure.rescale_intensity(img, in_range=(p2, p98))
+        # Adaptive Equalization
+        img_adapteq = exposure.equalize_adapthist(img, clip_limit=0.03)
+        io.imsave(
+            output_folder + photo_name,
+            img_adapteq,
+        )
+
+
 # Example
-# tmpBright = brightnessCalculator(photo_toCheck)
-# print(tmpBright)
-# print(photoBrightnessEvaluate(photo_toCheck))
+processingFlag = photoBrightnessEvaluate(photo_toCheck)
+photoProcessor(processingFlag)
