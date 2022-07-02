@@ -5,14 +5,6 @@ from math import sqrt
 import io
 from skimage import exposure
 from skimage import io
-from skimage import data, img_as_float
-import numpy as np
-from matplotlib import image
-import matplotlib.pyplot as plt
-import matplotlib
-import skimage.io
-import keras.preprocessing.image
-import cv2
 
 # folder -> photo directory
 # photo_toCheck -> photo name to check for brightness
@@ -32,7 +24,7 @@ stdRGBMean = (
 
 # path to get photo from
 folder = "photos/"
-photo_name = "darked_face.jpeg"
+photo_name = "images.jpeg"
 photo_toCheck = str(folder + photo_name)
 
 # path to save post-elaboration output
